@@ -46,12 +46,30 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 
 ;; Erlang
-(setq load-path (cons "/usr/lib/erlang/lib/tools-2.6.6.3/emacs" load-path))
-(setq erlang-root-dir "/usr/lib/erlang")
-(setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
-(require 'erlang-start)
+;;(setq load-path (cons "/usr/lib/erlang/lib/tools-2.6.6.3/emacs" load-path))
+;;(setq erlang-root-dir "/usr/lib/erlang")
+;;(setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
+;;(require 'erlang-start)
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
 	(cons '("\\.md" . markdown-mode) auto-mode-alist))
+
+;; Arduino
+(setq auto-mode-alist (cons '("\\.\\(pde\\|ino\\)$" . arduino-mode) auto-mode-alist))
+(autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
+
+;; Python
+(require 'python-mode)
+(add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
+(require 'ipython)
+(require 'lambda-mode)
+(add-hook 'python-mode-hook #'lambda-mode 1)
+(setq lambda-symbol (string (make-char 'greek-iso8859-7 107)))
+(add-hook 'python-mode-hook
+          #'(lambda () (push '(?' . ?')
+                              (getf autopair-extra-pairs :code))
+ (setq autopair-handle-action-fns
+      (list #'autopair-default-handle-action
+            #'autopair-python-triple-quote-action))))
