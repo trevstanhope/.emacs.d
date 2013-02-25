@@ -63,7 +63,6 @@
 ;; Python
 (require 'python-mode)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-(require 'ipython)
 (require 'lambda-mode)
 (add-hook 'python-mode-hook #'lambda-mode 1)
 (setq lambda-symbol (string (make-char 'greek-iso8859-7 107)))
