@@ -5,9 +5,9 @@
 ;;; Custom Set Variables
 (custom-set-variables
  '(cua-mode t nil (cua-base))
- '(inhibit-default-init nil)
+ '(inhibit-default-init t)
  '(inhibit-startup-screen t)
- '(initial-buffer-choice t)
+ '(initial-buffer-choice nil)
  '(initial-scratch-message ";;;; Lisp Scratch Buffer")
  '(scroll-bar-mode (quote right))
  '(show-paren-mode t)
