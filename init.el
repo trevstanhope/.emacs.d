@@ -49,6 +49,8 @@
 (autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
 
 ;;; Python
+(split-window-vertically)
+(py-shell)
 (require 'python-mode)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (require 'lambda-mode)
