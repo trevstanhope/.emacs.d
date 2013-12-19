@@ -1,8 +1,8 @@
-;;;; Emacs Init-file
-;;; by Trevor Stanhope
-;;; February 12th, 2013
+;; Emacs Init-file
+;; by Trevor Stanhope
+;; February 12th, 2013
 
-;;; Custom Set Variables
+;; Custom Set Variables
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
@@ -26,37 +26,38 @@
   ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "bitstream" :family "Courier 10 Pitch")))))
 
-;;; Modules Path
+;; Modules Path
 (add-to-list 'load-path
 	     "~/.emacs.d/modules")
 
-;;; Auto Pair
+;; Auto Pair
 (require 'autopair)
-(autopair-global-mode) ;; enabled in all buffers
+(autopair-global-mode) ; enabled in all buffers
 
-;;; Auto Complete
+;; Auto Complete
 (require 'auto-complete-config)
 (ac-config-default)
 (add-to-list 'ac-dictionary-directories 
 	     "~/.emacs.d/ac-dict")
 
-;;; Erlang
+;; Erlang
 ;(setq load-path (cons "/usr/lib/erlang/lib/tools-2.6.6.3/emacs" load-path))
 ;(setq erlang-root-dir "/usr/lib/erlang")
 ;(setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
 ;(require 'erlang-start)
 
-;;; Markdown
+;; Markdown
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
 (setq auto-mode-alist 
       (cons '("\\.md" . markdown-mode) auto-mode-alist))
 
-;;; Arduino
+;; Arduino
 (setq auto-mode-alist 
       (cons '("\\.\\(pde\\|ino\\)$" . arduino-mode) auto-mode-alist))
 (autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
 
-;;; Python
+;; Python
+;; Requires python-mode packae
 (split-window-vertically)
 (py-shell)
 (require 'python-mode)
@@ -72,10 +73,10 @@
 		    (list #'autopair-default-handle-action
 			  #'autopair-python-triple-quote-action))))
 
-;;; Git
+;; Git
 (require 'git)
 
-;;; Frame
+;; Frame
 (setq frame-title-format
     '(buffer-file-name
     "%f"
