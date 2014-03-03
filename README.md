@@ -1,4 +1,4 @@
-# README for .emacs.d
+# Trev Stanhope's .emacs.d
 ## Modules
 markdown-mode.el
 auto-complete.el

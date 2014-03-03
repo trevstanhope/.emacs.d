@@ -4,10 +4,6 @@
 
 ;; Custom Set Variables
 (custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
  '(cua-mode t nil (cua-base))
  '(inhibit-default-init t)
  '(inhibit-startup-screen t)
@@ -18,12 +14,8 @@
  '(text-mode-hook (quote (turn-on-auto-fill text-mode-hook-identify)))
  '(uniquify-buffer-name-style (quote post-forward-angle-brackets) nil (uniquify)))
 
-;;; Custom Set Faces
+;; Custom Set Faces
 (custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "white" :foreground "black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 98 :width normal :foundry "bitstream" :family "Courier 10 Pitch")))))
 
 ;; Modules Path
@@ -41,10 +33,11 @@
 	     "~/.emacs.d/ac-dict")
 
 ;; Erlang
-;(setq load-path (cons "/usr/lib/erlang/lib/tools-2.6.6.3/emacs" load-path))
-;(setq erlang-root-dir "/usr/lib/erlang")
-;(setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
-;(require 'erlang-start)
+;; Requires erlang package
+;; (setq load-path (cons "/usr/lib/erlang/lib/tools-2.6.6.3/emacs" load-path))
+;; (setq erlang-root-dir "/usr/lib/erlang")
+;; (setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
+;; (require 'erlang-start)
 
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
@@ -57,9 +50,9 @@
 (autoload 'arduino-mode "arduino-mode" "Arduino editing mode." t)
 
 ;; Python
-;; Requires python-mode packae
+;; Requires python-mode package
 (split-window-vertically)
-(py-shell)
+(python-shell)
 (require 'python-mode)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (require 'lambda-mode)
