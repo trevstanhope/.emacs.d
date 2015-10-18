@@ -32,6 +32,10 @@
 (add-to-list 'ac-dictionary-directories 
 	     "~/.emacs.d/ac-dict")
 
+;; Clang
+(load "/usr/share/emacs/site-lisp/clang-format-3.5/clang-format.el")
+(global-set-key [C-tab] 'clang-format-region)
+
 ;; Erlang
 ;; Requires erlang package
 ;; (setq load-path (cons "/usr/lib/erlang/lib/tools-2.6.6.3/emacs" load-path))
@@ -52,8 +56,8 @@
 ;; Python
 ;; Requires python-mode package
 (split-window-vertically)
-(python-shell)
 (require 'python-mode)
+(py-shell)
 (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
 (require 'lambda-mode)
 (add-hook 'python-mode-hook
