@@ -22,6 +22,10 @@
 (add-to-list 'load-path
 	     "~/.emacs.d/modules")
 
+;; Themes
+(add-to-list 'load-path "~/.emacs.d/themes/")
+(require 'railscasts-theme)
+
 ;; Auto Pair
 (require 'autopair)
 (autopair-global-mode) ; enabled in all buffers
